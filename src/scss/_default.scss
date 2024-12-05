@@ -1,0 +1,119 @@
+@use "./variables" as vars;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+button {
+	margin: 0;
+	font-family: vars.$montserrat-font;
+}
+
+h1 {
+	font-size: 58px;
+	line-height: 1.38em;
+	letter-spacing: 0.2px;
+	font-weight: 800;
+}
+h2 {
+	font-size: 40px;
+	line-height: 1.425em;
+	letter-spacing: 0.2px;
+	font-weight: 700;
+}
+h3 {
+	font-size: 24px;
+	line-height: 1.33em;
+	letter-spacing: 0.1px;
+	font-weight: 700;
+}
+h4 {
+	font-size: 20px;
+	line-height: 1.5em;
+	letter-spacing: 0.2px;
+	font-weight: 500;
+}
+h5 {
+	font-size: 16px;
+	line-height: 1.5em;
+	letter-spacing: 0.1px;
+	font-weight: 700;
+}
+h6 {
+	font-size: 14px;
+	line-height: 1.71em;
+	letter-spacing: 0.2px;
+	font-weight: 600;
+}
+
+// Fonts settings need to add
+// --------------------------
+// bin-tett ??
+// mobile-menu ??
+// paragraph ??
+
+// list ??
+// {	font-size: 20px;
+// 	line-height: 1.5em;
+// 	letter-spacing: 0.2px;
+// 	font-weight: 400;
+// }
+
+// link added into <a>
+//---------------------------
+
+a {
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 1.71em;
+	letter-spacing: 0.2px;
+	font-weight: 600;
+}
+
+ul,
+ol,
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+}
+
+body {
+	font-family: vars.$montserrat-font;
+	font-size: 20px;
+	font-weight: 400;
+	letter-spacing: 0em;
+	line-height: 1;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	max-width: 1050px;
+	margin-left: auto;
+	margin-right: auto;
+	@include vars.mobile {
+		max-width: 330px;
+	}
+}
+
+button {
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.57em;
+	letter-spacing: 0.2px;
+}
+
+// section {
+
+// }
