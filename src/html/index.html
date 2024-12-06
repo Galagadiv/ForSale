@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 
-		<link rel="stylesheet" href="./css/modern-nomalize.css" />
+		<link rel="stylesheet" href="./css/modern-normalize.css" />
 
 		<link rel="stylesheet" href="./css/styles.css" />
 
@@ -20,7 +20,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		@@include('./header/header.html') @@include('./main/main.html')
+		<!-- //За допомогою Gulp розбив html на файли, які підключив І зібрав за аналогією з scss -->
+		<!-- //--------------------------------------------------------------------------------- -->
+		<!-- //header -->
+		@@include('./header/header.html')
+
+		<!-- //main -->
+		@@include('./main/main.html')
+
+		<!-- //footer -->
 		@@include('./footer/footer.html')
 	</body>
 </html>

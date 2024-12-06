@@ -1,14 +1,24 @@
 @use "./variables" as vars;
 
 .background {
-	z-index: 1;
-	background-image: url("../img/background.jpg");
-	background-size: 1440px 817px;
-	background-position: center;
-	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	z-index: -1;
+	background-color: vars.$muted-color;
+	img {
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
+		height: auto;
+		max-height: 817px;
+	}
 }
 .header {
-	background-color: black;
+	background: transparent;
 	padding: 20px 0;
 	.container {
 		display: flex;
@@ -43,5 +53,8 @@
 		color: vars.$light-text-color;
 		text-transform: capitalize;
 		gap: 15px;
+		svg {
+			color: vars.$light-text-color;
+		}
 	}
 }

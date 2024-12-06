@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 
-		<link rel="stylesheet" href="./css/modern-nomalize.css" />
+		<link rel="stylesheet" href="./css/modern-normalize.css" />
 
 		<link rel="stylesheet" href="./css/styles.css" />
 
@@ -20,8 +20,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<div class="background"></div>
-<section class="header">
+		<!-- //За допомогою Gulp розбив html на файли, які підключив І зібрав за аналогією з scss -->
+		<!-- //--------------------------------------------------------------------------------- -->
+		<!-- //header -->
+		<div class="background .container">
+	<img src="../img/background.jpg" alt="background" />
+</div>
+<header class="header">
 	<div class="container">
 		<h3 class="header__title">Physionic</h3>
 		<ul class="header__list">
@@ -40,11 +45,197 @@
 		</ul>
 		<button class="header__link">
 			get quote now
-			<img src="./img" alt="arrow" width="12" height="10" />
+			<svg width="12" height="10">
+				<symbol id="icon-arrow" viewBox="0 0 38 32">
+					<path
+						fill="#fff"
+						d="M0 16c0-0.606 0.253-1.187 0.703-1.616s1.060-0.669 1.697-0.669h27.803l-10.304-9.809c-0.451-0.429-0.704-1.011-0.704-1.618s0.253-1.189 0.704-1.618c0.451-0.429 1.062-0.67 1.699-0.67s1.248 0.241 1.699 0.67l14.398 13.712c0.223 0.212 0.401 0.464 0.522 0.742s0.183 0.575 0.183 0.876-0.062 0.598-0.183 0.876c-0.121 0.278-0.298 0.53-0.522 0.742l-14.398 13.712c-0.451 0.429-1.062 0.67-1.699 0.67s-1.248-0.241-1.699-0.67c-0.451-0.429-0.704-1.011-0.704-1.618s0.253-1.189 0.704-1.618l10.304-9.808h-27.803c-0.636 0-1.247-0.241-1.697-0.669s-0.703-1.010-0.703-1.616z"
+					></path>
+				</symbol>
+				<use href="#icon-arrow"></use>
+			</svg>
 		</button>
 	</div>
-</section>
- 
+</header>
+
+
+		<!-- //main -->
+		<main>
+	<section class="hero">
+		<div class="container">
+			<!-- герой -- секція після header розбита на дві колонки: текст і форма -->
+			<div class="hero__text-block">
+				<h1 class="hero__text-block__title">Meet the Best Hospital</h1>
+				<h4 class="hero__text-block__txt">
+					We know how large objects will act, but things on a small scale.
+				</h4>
+				<div class="hero__text-block__btn-block">
+					<button class="hero__text-block__btn-block__l">get quote now</button>
+					<button class="hero__text-block__btn-block__r">learn more</button>
+				</div>
+			</div>
+
+			<div class="hero__form-block">
+				<h3 class="hero__form-block__title">book appointment</h3>
+				<form class="hero__form-block__form">
+					<ul>
+						<li>
+							<label for="name">Name *</label>
+							<input id="name" type="text" placeholder="Full Name *" required />
+						</li>
+						<li>
+							<label for="email"> Email address *</label>
+							<input
+								id="email"
+								type="email"
+								placeholder="example@gmail.com"
+								required
+							/>
+						</li>
+						<li>
+							<label for="dept"> Department *</label>
+							<select id="dept" name="Department" required>
+								<option value="">Please Select</option>
+							</select>
+						</li>
+						<li>
+							<label for="time"> Time *</label>
+							<select id="time" name="Booking time" required>
+								<option value="+380">4:00 Avaliable</option>
+								<option value="+380">8:00 Avaliable</option>
+								<option value="+380">12:00 Avaliable</option>
+								<option value="+380">16:00 Avaliable</option>
+								<option value="+380">20:00 Avaliable</option>
+							</select>
+						</li>
+					</ul>
+					<button type="submit">book appointment</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section class="splide">
+		<div class="container">
+			<h2 class="splide__title">leading medicine</h2>
+			<p class="splide__text">
+				Problems trying to resolve the conflict between <br />
+				the two major realms of Classical physics: Newtonian mechanics
+			</p>
+			<div class="splide__track">
+				<ul class="splide__list">
+					<li class="splide__slide">
+						<div class="splide__slide__title-block">
+							<div>
+								<!-- <img
+									src="./img/icons.svg#icon-people"
+									alt="icon"
+									width="24"
+									height="20"
+								/> -->
+								<svg width="24" height="20">
+									<use href="./img/icons.svg#icon-people"></use>
+								</svg>
+							</div>
+							<h5>Emergency Case</h5>
+						</div>
+						<ul>
+							<li>
+								<h6>- The best products start with Figma</h6>
+							</li>
+							<li>
+								<h6>- Design with real data</h6>
+							</li>
+							<li>
+								<h6>- Lightning fast prototyping</h6>
+							</li>
+							<li>
+								<h6>- Fastest way to organize</h6>
+							</li>
+							<li>
+								<h6>- Work at the speed of thought.</h6>
+							</li>
+							<li>
+								<a href="#">learn more</a>
+							</li>
+						</ul>
+					</li>
+					<li class="splide__slide">
+						<div class="splide__slide__title-block">
+							<div>
+								<svg width="24" height="20">
+									<use href="./img/icons.svg#icon-people"></use>
+								</svg>
+							</div>
+							<h5>cancer care</h5>
+						</div>
+						<ul>
+							<li>
+								<h6>- The best products start with Figma</h6>
+							</li>
+							<li>
+								<h6>- Design with real data</h6>
+							</li>
+							<li>
+								<h6>- Lightning fast prototyping</h6>
+							</li>
+							<li>
+								<h6>- Fastest way to organize</h6>
+							</li>
+							<li>
+								<h6>- Work at the speed of thought.</h6>
+							</li>
+							<li>
+								<a href="#">learn more</a>
+							</li>
+						</ul>
+					</li>
+					<li class="splide__slide">
+						<div class="splide__slide__title-block">
+							<div>
+								<svg width="24" height="20">
+									<use href="./img/icons.svg#icon-people"></use>
+								</svg>
+							</div>
+							<h5>health queries</h5>
+						</div>
+						<ul>
+							<li>
+								<h6>- The best products start with Figma</h6>
+							</li>
+							<li>
+								<h6>- Design with real data</h6>
+							</li>
+							<li>
+								<h6>- Lightning fast prototyping</h6>
+							</li>
+							<li>
+								<h6>- Fastest way to organize</h6>
+							</li>
+							<li>
+								<h6>- Work at the speed of thought.</h6>
+							</li>
+							<li>
+								<a href="#">learn more</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="reviews"></section>
+
+	<section class="faq"></section>
+
+	<section class="pricing"></section>
+
+	<section class="contacts"></section>
+</main>
+
+
+		<!-- //footer -->
 		
 	</body>
 </html>

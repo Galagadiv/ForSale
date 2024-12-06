@@ -16,50 +16,54 @@ button {
 h1 {
 	font-size: 58px;
 	line-height: 1.38em;
-	letter-spacing: 0.2px;
+	letter-spacing: 0.02em;
 	font-weight: 800;
 }
 h2 {
 	font-size: 40px;
 	line-height: 1.425em;
-	letter-spacing: 0.2px;
+	letter-spacing: 0.02em;
 	font-weight: 700;
 }
 h3 {
 	font-size: 24px;
 	line-height: 1.33em;
-	letter-spacing: 0.1px;
+	letter-spacing: 0.01em;
 	font-weight: 700;
 }
 h4 {
 	font-size: 20px;
 	line-height: 1.5em;
-	letter-spacing: 0.2px;
-	font-weight: 500;
+	letter-spacing: 0.02em;
+	font-weight: 500; //300 або 400 в hero
 }
 h5 {
 	font-size: 16px;
 	line-height: 1.5em;
-	letter-spacing: 0.1px;
-	font-weight: 700;
+	letter-spacing: 0.01em;
+	font-weight: 600;
 }
 h6 {
 	font-size: 14px;
 	line-height: 1.71em;
-	letter-spacing: 0.2px;
+	letter-spacing: 0.02em;
 	font-weight: 600;
 }
-
+p {
+	font-size: 14px;
+	line-height: 1.42em;
+	letter-spacing: 0.02em;
+	font-weight: 400;
+}
 // Fonts settings need to add
 // --------------------------
-// bin-tett ??
 // mobile-menu ??
 // paragraph ??
 
 // list ??
 // {	font-size: 20px;
 // 	line-height: 1.5em;
-// 	letter-spacing: 0.2px;
+// 	letter-spacing: 0.02px;
 // 	font-weight: 400;
 // }
 
@@ -70,7 +74,7 @@ a {
 	text-decoration: none;
 	font-size: 14px;
 	line-height: 1.71em;
-	letter-spacing: 0.2px;
+	letter-spacing: 0.02px;
 	font-weight: 600;
 }
 
@@ -109,11 +113,18 @@ body {
 button {
 	cursor: pointer;
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 700; //500 в hero
 	line-height: 1.57em;
-	letter-spacing: 0.2px;
+	letter-spacing: 0.02px;
 }
 
+input,
+select {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
 // section {
 
 // }
