@@ -1,0 +1,40 @@
+@use "./variables" as vars;
+
+.splide {
+	display: flex;
+	flex-direction: column;
+	padding: 112px 0;
+	&__title {
+		text-transform: capitalize;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	&__text {
+		text-align: center;
+		color: vars.$second-text-color;
+		margin-bottom: 80px;
+	}
+	&__list {
+		display: flex;
+		gap: 30px;
+		overflow: hidden;
+	}
+	&__slide {
+		max-width: 330px;
+		border-radius: 10px;
+		border: 1px solid vars.$primary-color;
+		overflow: hidden;
+		padding: 30px 35px;
+		&__stars-block {
+			display: flex;
+			// padding: 30px 35px 0px;
+			align-items: center;
+			gap: 13px;
+			margin-bottom: 22px;
+		}
+		&__text {
+			color: vars.$second-text-color;
+			margin-bottom: 20px;
+		}
+	}
+}
