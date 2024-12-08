@@ -1,33 +1,73 @@
-<div class="background .container">
-	<img src="../img/background.jpg" alt="background" />
-</div>
 <header class="header">
-	<div class="container">
-		<h3 class="header__title">Physionic</h3>
-		<ul class="header__list">
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Home</a>
+	<div class="mobile">
+		<div class="container">
+			<h3 class="mobile__title">Physionic</h3>
+			<ul class="mobile__icons-list">
+				<li class="mobile__icons-list__item">
+					<button type="menu" class="mobile__icons-list__item__button">
+						<svg width="23" height="23">
+							<use href="./img/icons.svg#icon-search"></use>
+						</svg>
+					</button>
+				</li>
+				<li class="mobile__icons-list__item">
+					<button type="menu" class="mobile__icons-list__item__button">
+						<svg width="23" height="23">
+							<use href="./img/icons.svg#icon-basket"></use>
+						</svg>
+					</button>
+				</li>
+				<li class="mobile__icons-list__item">
+					<button
+						type="menu"
+						class="mobile__icons-list__item__button"
+						id="burger-btn"
+					>
+						<svg width="23" height="23">
+							<use href="./img/icons.svg#icon-burger"></use>
+						</svg>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<ul class="mobile__nav-list" id="burger-list">
+		<li class="mobile__nav-list__item">
+			<a href="#" class="mobile__nav-list__item__link">Home</a>
+		</li>
+		<li class="mobile__list__item">
+			<a href="#" class="mobile__nav-list__item__link">Product</a>
+		</li>
+		<li class="mobile__nav-list__item">
+			<a href="#" class="mobile__nav-list__item__link">Pricing</a>
+		</li>
+		<li class="mobile__nav-list__item">
+			<a href="#" class="mobile__nav-list__item__link">Contact</a>
+		</li>
+	</ul>
+	<div class="background">
+		<img src="./img/background.jpg" alt="background" />
+	</div>
+	<div class="container desktop">
+		<h3 class="desktop__title">Physionic</h3>
+		<ul class="desktop__list">
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Home</a>
 			</li>
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Product</a>
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Product</a>
 			</li>
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Pricing</a>
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Pricing</a>
 			</li>
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Contact</a>
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Contact</a>
 			</li>
 		</ul>
-		<button class="header__link">
+		<button class="desktop__link">
 			get quote now
 			<svg width="12" height="10">
-				<symbol id="icon-arrow" viewBox="0 0 38 32">
-					<path
-						fill="#fff"
-						d="M0 16c0-0.606 0.253-1.187 0.703-1.616s1.060-0.669 1.697-0.669h27.803l-10.304-9.809c-0.451-0.429-0.704-1.011-0.704-1.618s0.253-1.189 0.704-1.618c0.451-0.429 1.062-0.67 1.699-0.67s1.248 0.241 1.699 0.67l14.398 13.712c0.223 0.212 0.401 0.464 0.522 0.742s0.183 0.575 0.183 0.876-0.062 0.598-0.183 0.876c-0.121 0.278-0.298 0.53-0.522 0.742l-14.398 13.712c-0.451 0.429-1.062 0.67-1.699 0.67s-1.248-0.241-1.699-0.67c-0.451-0.429-0.704-1.011-0.704-1.618s0.253-1.189 0.704-1.618l10.304-9.808h-27.803c-0.636 0-1.247-0.241-1.697-0.669s-0.703-1.010-0.703-1.616z"
-					></path>
-				</symbol>
-				<use href="#icon-arrow"></use>
+				<use href="./img/icons.svg#icon-arrow"></use>
 			</svg>
 		</button>
 	</div>

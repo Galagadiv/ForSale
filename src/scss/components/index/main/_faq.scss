@@ -1,0 +1,48 @@
+@use "./variables" as vars;
+
+.faq {
+	padding: 125px 0 80px 0;
+	background-color: vars.$light-gray-1;
+	&__title {
+		text-transform: capitalize;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	&__text {
+		text-align: center;
+		color: vars.$second-text-color;
+		margin-bottom: 95px;
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap; /* Дозволяє елементам переноситися */
+		gap: 30px;
+		&__item {
+			cursor: pointer;
+			flex: 1 1 calc(33.33% - 30px);
+			// flex: [flex-grow] [flex-shrink] [flex-basis];
+			// [flex-grow] - базова ширина може збільшуватися
+			// [flex-shrink] - базова ширина може зменшуватися
+			// [flex-basis] або базова ширина - calc(33.33% - 30px) (тобто третина контейнера мінус відступи)
+			max-width: 333px;
+			width: 100%;
+			padding: 25px 32.5px;
+			background-color: vars.$light-background-color;
+			display: flex;
+			gap: 20px;
+			h5 {
+				color: vars.$text-color;
+				margin-bottom: 5px;
+			}
+			h6 {
+				color: vars.$second-text-color;
+			}
+			@include vars.mobile {
+				flex: 1 1 calc(50% - 30px); /* 1 колонка на мобільних */
+			}
+			@include vars.tablet {
+				flex: 1 1 calc(100%); /* 2 для планшетів  */
+			}
+		}
+	}
+}

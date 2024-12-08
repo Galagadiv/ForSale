@@ -1,0 +1,130 @@
+@use "./variables" as vars;
+
+.pricing {
+	margin: 112px 0;
+	&__title {
+		text-transform: capitalize;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	&__text {
+		text-align: center;
+		color: vars.$second-text-color;
+		margin-bottom: 80px;
+	}
+	&__list {
+		display: flex;
+		gap: 1px;
+		justify-content: center;
+		// ПРОБЛЕМА
+		// На макеті елементи з padding звеху і знизу по 50px
+		// Коли на них наводишся padding розширюється до 70px
+		// Варіант #1: Звичайне розширення через transform по вісі Y працює, але вміст розтягується
+		// Варіант #2: Збільшення padding призводить до розширення всіх елементів, бо висота item не фіксована,
+		// а якщо буде фіксована то елемент буде приклеєний до стелі і збільшення буде вниз.
+		// ----------------------------------------------------------------------------------------
+		// РІШЕННЯ
+		// Для кожного елемента прописаний margin-top = 140 - 100
+		// padding стандартний 50+50
+		// padding розширений 70+70
+		// Цей margin введений, щоб при наведенні на конкретний елемент він ставав нулем, а padding розширювався
+		// В той час як margin інших елементів залишався
+		&__item {
+			margin-top: 40px;
+			display: flex;
+			flex-direction: column;
+			max-width: 327px;
+			padding: 50px 40px;
+			border: 1px solid vars.$primary-color;
+			border-radius: 10px;
+			gap: 35px;
+			background-color: vars.$light-background-color;
+
+			transition: background-color vars.$trans-anim, padding vars.$trans-anim,
+				margin-top vars.$trans-anim;
+			&__title {
+				color: vars.$text-color;
+				text-align: center;
+				text-transform: capitalize;
+				transition: color vars.$trans-anim;
+			}
+			&__text {
+				color: vars.$second-text-color;
+				text-align: center;
+				transition: color vars.$trans-anim;
+			}
+			&__cost {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				h2 {
+					color: vars.$primary-color !important;
+				}
+				div {
+					h5 {
+						color: vars.$primary-color !important;
+					}
+					h6 {
+						color: vars.$disabled-element-color !important;
+					}
+				}
+			}
+			&__advantages {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				li {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					.check-mark {
+						display: flex;
+						padding: 11px 8px;
+						width: 32px;
+						height: 32px;
+						background-color: vars.$success-color;
+						border-radius: 50%;
+					}
+					.disabled {
+						background-color: vars.$muted-color;
+					}
+					h6 {
+						transition: color vars.$trans-anim;
+					}
+				}
+			}
+			&__link {
+				display: flex;
+				justify-content: center;
+				width: 100%;
+				border: 0;
+				border-radius: 5px;
+				padding: 15px 0;
+				background-color: vars.$primary-color;
+				color: vars.$light-text-color;
+
+				cursor: pointer;
+				font-size: 14px;
+				font-weight: 700;
+				line-height: 1.57em;
+				letter-spacing: 0.02px;
+			}
+			&:hover {
+				padding: 70px 40px;
+				margin-top: 0;
+				background-color: vars.$text-color;
+				transition: background-color vars.$trans-anim, padding vars.$trans-anim,
+					margin-top vars.$trans-anim;
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					color: vars.$light-text-color;
+					transition: color vars.$trans-anim;
+				}
+			}
+		}
+	}
+}

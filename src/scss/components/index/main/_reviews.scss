@@ -3,7 +3,10 @@
 .splide {
 	display: flex;
 	flex-direction: column;
-	padding: 112px 0;
+	background-color: vars.$light-gray-1;
+	.container {
+		padding: 112px 0;
+	}
 	&__title {
 		text-transform: capitalize;
 		text-align: center;
@@ -17,13 +20,15 @@
 	&__list {
 		display: flex;
 		gap: 30px;
-		overflow: hidden;
+		// @include vars.mobile {
+		// 	flex-direction: column;
+		// }
 	}
 	&__slide {
+		background-color: vars.$light-background-color;
 		max-width: 330px;
 		border-radius: 10px;
-		border: 1px solid vars.$primary-color;
-		overflow: hidden;
+		border: 2px solid vars.$light-gray-2;
 		padding: 30px 35px;
 		&__stars-block {
 			display: flex;

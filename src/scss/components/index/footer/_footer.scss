@@ -1,0 +1,46 @@
+@use "./variables" as vars;
+
+.footer {
+	&__contacts-block {
+		margin: 80px 0;
+	}
+	.main-list {
+		display: flex;
+		justify-content: space-between;
+		&__item {
+			max-width: 240px;
+			h3 {
+				text-transform: capitalize;
+				margin-bottom: 25px;
+			}
+			p {
+				margin-bottom: 25px;
+				color: vars.$second-text-color;
+			}
+			div {
+				display: flex;
+				gap: 20px;
+			}
+			.minor-list {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				li {
+					a {
+						text-transform: capitalize;
+						color: vars.$second-text-color;
+					}
+				}
+			}
+		}
+	}
+	&__author {
+		padding: 25px 0;
+		background-color: vars.$light-gray-1;
+		h6 {
+			text-align: center;
+			text-transform: capitalize;
+			color: vars.$second-text-color;
+		}
+	}
+}

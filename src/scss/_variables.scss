@@ -18,9 +18,15 @@ $light-gray-2: #ececec !default;
 // $background-gradient-1:  ГРАДІЄНТ;
 $montserrat-font: "Montserrat", sans-serif !default;
 $trans-anim: 0.5s ease !default;
+$trans-anim-slow: 1s ease !default;
 
 @mixin mobile {
-	@media screen and (min-width: 414px) and (max-width: 1439.9px) {
+	@media screen and (min-width: 414px) and (max-width: 727.9px) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media screen and (min-width: 728px) and (max-width: 1439.9px) {
 		@content;
 	}
 }

@@ -3,9 +3,10 @@
 .background {
 	position: absolute;
 	top: 0;
-	left: 0;
 	width: 100%;
 	height: auto;
+	//непрацює нормально, бо хз
+	//background: url("../img/background.jpg") no-repeat center/cover;
 	background-size: cover;
 	z-index: -1;
 	background-color: vars.$muted-color;
@@ -17,7 +18,8 @@
 		max-height: 817px;
 	}
 }
-.header {
+.desktop {
+	display: flex;
 	background: transparent;
 	padding: 20px 0;
 	.container {
@@ -56,5 +58,87 @@
 		svg {
 			color: vars.$light-text-color;
 		}
+	}
+}
+.mobile {
+	display: none;
+	background: transparent;
+	padding: 20px 0;
+	background-color: vars.$light-gray-2;
+	.container {
+		display: flex;
+		align-items: baseline;
+	}
+	&__title {
+		display: flex;
+		align-items: center;
+		color: vars.$text-color;
+		margin-right: 95px;
+	}
+	&__icons-list {
+		display: flex;
+		gap: 24px;
+		margin-right: 345px;
+		align-items: center;
+		&__item {
+			&__button {
+				// color: vars.$light-text-color;
+				background: none;
+				border: 0;
+				outline: 0;
+			}
+		}
+	}
+	&__nav-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 85px 0;
+		gap: 30px;
+		a {
+			color: vars.$second-text-color;
+			font-size: 30px;
+			font-weight: 400;
+			line-height: 1.5em;
+			letter-spacing: 0.02em;
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		max-width: 190px;
+		max-height: 52px;
+		border: 0;
+		border-radius: 5px;
+		padding: 15px 25px;
+		text-align: center;
+		background-color: vars.$primary-color;
+		color: vars.$light-text-color;
+		text-transform: capitalize;
+		gap: 15px;
+		svg {
+			color: vars.$light-text-color;
+		}
+	}
+}
+#burger-list {
+	background-color: vars.$light-gray-2;
+	transform: scaleY(0);
+	transform-origin: top;
+	width: 100%;
+	transition: transform vars.$trans-anim;
+	z-index: -1; /* Високий шар для меню */
+}
+
+#burger-list.is-visible {
+	transform: scaleY(1); /* Показати меню */
+}
+
+@include vars.mobile {
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: flex;
 	}
 }

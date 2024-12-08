@@ -4,17 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-
+		<link rel="stylesheet" href="./css/splide.min.css" />
 		<link rel="stylesheet" href="./css/modern-normalize.css" />
-
-		<link rel="stylesheet" href="./css/styles.css" />
-
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="stylesheet" href="./css/styles.css" />
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,36 +21,76 @@
 		<!-- //За допомогою Gulp розбив html на файли, які підключив І зібрав за аналогією з scss -->
 		<!-- //--------------------------------------------------------------------------------- -->
 		<!-- //header -->
-		<div class="background .container">
-	<img src="../img/background.jpg" alt="background" />
-</div>
-<header class="header">
-	<div class="container">
-		<h3 class="header__title">Physionic</h3>
-		<ul class="header__list">
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Home</a>
+		<header class="header">
+	<div class="mobile">
+		<div class="container">
+			<h3 class="mobile__title">Physionic</h3>
+			<ul class="mobile__icons-list">
+				<li class="mobile__icons-list__item">
+					<button type="menu" class="mobile__icons-list__item__button">
+						<svg width="23" height="23">
+							<use href="./img/icons.svg#icon-search"></use>
+						</svg>
+					</button>
+				</li>
+				<li class="mobile__icons-list__item">
+					<button type="menu" class="mobile__icons-list__item__button">
+						<svg width="23" height="23">
+							<use href="./img/icons.svg#icon-basket"></use>
+						</svg>
+					</button>
+				</li>
+				<li class="mobile__icons-list__item">
+					<button
+						type="menu"
+						class="mobile__icons-list__item__button"
+						id="burger-btn"
+					>
+						<svg width="23" height="23">
+							<use href="./img/icons.svg#icon-burger"></use>
+						</svg>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<ul class="mobile__nav-list" id="burger-list">
+		<li class="mobile__nav-list__item">
+			<a href="#" class="mobile__nav-list__item__link">Home</a>
+		</li>
+		<li class="mobile__list__item">
+			<a href="#" class="mobile__nav-list__item__link">Product</a>
+		</li>
+		<li class="mobile__nav-list__item">
+			<a href="#" class="mobile__nav-list__item__link">Pricing</a>
+		</li>
+		<li class="mobile__nav-list__item">
+			<a href="#" class="mobile__nav-list__item__link">Contact</a>
+		</li>
+	</ul>
+	<div class="background">
+		<img src="./img/background.jpg" alt="background" />
+	</div>
+	<div class="container desktop">
+		<h3 class="desktop__title">Physionic</h3>
+		<ul class="desktop__list">
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Home</a>
 			</li>
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Product</a>
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Product</a>
 			</li>
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Pricing</a>
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Pricing</a>
 			</li>
-			<li class="header__list__item">
-				<a href="#" class="header__list__item__link">Contact</a>
+			<li class="desktop__list__item">
+				<a href="#" class="desktop__list__item__link">Contact</a>
 			</li>
 		</ul>
-		<button class="header__link">
+		<button class="desktop__link">
 			get quote now
 			<svg width="12" height="10">
-				<symbol id="icon-arrow" viewBox="0 0 38 32">
-					<path
-						fill="#fff"
-						d="M0 16c0-0.606 0.253-1.187 0.703-1.616s1.060-0.669 1.697-0.669h27.803l-10.304-9.809c-0.451-0.429-0.704-1.011-0.704-1.618s0.253-1.189 0.704-1.618c0.451-0.429 1.062-0.67 1.699-0.67s1.248 0.241 1.699 0.67l14.398 13.712c0.223 0.212 0.401 0.464 0.522 0.742s0.183 0.575 0.183 0.876-0.062 0.598-0.183 0.876c-0.121 0.278-0.298 0.53-0.522 0.742l-14.398 13.712c-0.451 0.429-1.062 0.67-1.699 0.67s-1.248-0.241-1.699-0.67c-0.451-0.429-0.704-1.011-0.704-1.618s0.253-1.189 0.704-1.618l10.304-9.808h-27.803c-0.636 0-1.247-0.241-1.697-0.669s-0.703-1.010-0.703-1.616z"
-					></path>
-				</symbol>
-				<use href="#icon-arrow"></use>
+				<use href="./img/icons.svg#icon-arrow"></use>
 			</svg>
 		</button>
 	</div>
@@ -96,16 +134,22 @@
 							<label for="dept"> Department *</label>
 							<select id="dept" name="Department" required>
 								<option value="">Please Select</option>
+								<option value="1">Department #1</option>
+								<option value="2">Department #2</option>
+								<option value="3">Department #3</option>
+								<option value="4">Department #4</option>
+								<option value="5">Department #5</option>
 							</select>
 						</li>
 						<li>
 							<label for="time"> Time *</label>
 							<select id="time" name="Booking time" required>
-								<option value="+380">4:00 Avaliable</option>
-								<option value="+380">8:00 Avaliable</option>
-								<option value="+380">12:00 Avaliable</option>
-								<option value="+380">16:00 Avaliable</option>
-								<option value="+380">20:00 Avaliable</option>
+								<option value="">Please Select</option>
+								<option value="4:00">4:00 Avaliable</option>
+								<option value="8:00">8:00 Avaliable</option>
+								<option value="12:00">12:00 Avaliable</option>
+								<option value="16:00">16:00 Avaliable</option>
+								<option value="20:00">20:00 Avaliable</option>
 							</select>
 						</li>
 					</ul>
@@ -219,7 +263,7 @@
 		</div>
 	</section>
 
-	<section class="reviews splide">
+	<section class="reviews splide" id="reviewsSlider">
 		<div class="container">
 			<h2 class="splide__title">leading medicine</h2>
 			<p class="splide__text">
@@ -315,20 +359,474 @@
 							height="50px"
 						/>
 					</li>
+					<li class="splide__slide">
+						<div class="splide__slide__stars-block">
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-empty-star"></use>
+							</svg>
+						</div>
+						<h6 class="splide__slide__text">
+							Slate helps you see how many more days you need to work to reach
+							your financial goal.
+						</h6>
+						<img
+							src="./img/doctor1.jpg"
+							alt="Droctor's portrait"
+							width="50px"
+							height="50px"
+						/>
+					</li>
+					<li class="splide__slide">
+						<div class="splide__slide__stars-block">
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-empty-star"></use>
+							</svg>
+						</div>
+						<h6 class="splide__slide__text">
+							Slate helps you see how many more days you need to work to reach
+							your financial goal.
+						</h6>
+						<img
+							src="./img/doctor2.jpg"
+							alt="Droctor's portrait"
+							width="50px"
+							height="50px"
+						/>
+					</li>
+					<li class="splide__slide">
+						<div class="splide__slide__stars-block">
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-filled-star"></use>
+							</svg>
+							<svg width="18" height="18">
+								<use href="./img/icons.svg#icon-empty-star"></use>
+							</svg>
+						</div>
+						<h6 class="splide__slide__text">
+							Slate helps you see how many more days you need to work to reach
+							your financial goal.
+						</h6>
+						<img
+							src="./img/doctor3.jpg"
+							alt="Droctor's portrait"
+							width="50px"
+							height="50px"
+						/>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</section>
 
-	<section class="faq"></section>
+	<section class="faq">
+		<div class="container">
+			<h2 class="faq__title">FAQ</h2>
+			<p class="faq__text">
+				Problems trying to resolve the conflict between <br />
+				the two major realms of Classical physics: Newtonian mechanics
+			</p>
+			<div class="faq__list">
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<!-- ------------------------------------------------------->
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<!-- ------------------------------------------------------->
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+				<div class="faq__list__item">
+					<svg width="12" height="19">
+						<use href="./img/icons.svg#icon-blue-selector"></use>
+					</svg>
+					<div>
+						<h5>the quick fox jumps over the lazy dog</h5>
+						<h6>Things on a very small scale behave like nothing</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<section class="pricing"></section>
+	<section class="pricing">
+		<div class="container">
+			<h2 class="pricing__title">Pricing</h2>
+			<p class="pricing__text">
+				Problems trying to resolve the conflict between <br />
+				the two major realms of Classical physics: Newtonian mechanics
+			</p>
+			<ul class="pricing__list">
+				<li class="pricing__list__item">
+					<h3 class="pricing__list__item__title">free</h3>
+					<h5 class="pricing__list__item__text">
+						Organize across all <br />
+						apps by hand
+					</h5>
+					<div class="pricing__list__item__cost">
+						<h2>0</h2>
+						<div>
+							<h5>$</h5>
+							<h6>Per Month</h6>
+						</div>
+					</div>
+					<ul class="pricing__list__item__advantages">
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark disabled">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>1GB Cloud storage</h6>
+						</li>
+						<li>
+							<div class="check-mark disabled">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Email and community support</h6>
+						</li>
+					</ul>
+					<a href="#" class="pricing__list__item__link">Try for free</a>
+				</li>
 
-	<section class="contacts"></section>
+				<li class="pricing__list__item">
+					<h3 class="pricing__list__item__title">standart</h3>
+					<h5 class="pricing__list__item__text">
+						Organize across all <br />
+						apps by hand
+					</h5>
+					<div class="pricing__list__item__cost">
+						<h2>9.99</h2>
+						<div>
+							<h5>$</h5>
+							<h6>Per Month</h6>
+						</div>
+					</div>
+					<ul class="pricing__list__item__advantages">
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark disabled">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>1GB Cloud storage</h6>
+						</li>
+						<li>
+							<div class="check-mark disabled">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Email and community support</h6>
+						</li>
+					</ul>
+					<a href="#" class="pricing__list__item__link">Try for free</a>
+				</li>
+
+				<li class="pricing__list__item">
+					<h3 class="pricing__list__item__title">premium</h3>
+					<h5 class="pricing__list__item__text">
+						Organize across all <br />
+						apps by hand
+					</h5>
+					<div class="pricing__list__item__cost">
+						<h2>19.99</h2>
+						<div>
+							<h5>$</h5>
+							<h6>Per Month</h6>
+						</div>
+					</div>
+					<ul class="pricing__list__item__advantages">
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Unlimited product updates</h6>
+						</li>
+						<li>
+							<div class="check-mark disabled">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>1GB Cloud storage</h6>
+						</li>
+						<li>
+							<div class="check-mark disabled">
+								<svg width="16" height="11">
+									<use href="./img/icons.svg#icon-check-mark"></use>
+								</svg>
+							</div>
+							<h6>Email and community support</h6>
+						</li>
+					</ul>
+					<a href="#" class="pricing__list__item__link">Try for free</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="inTouch">
+		<div class="container">
+			<div class="inTouch__text-block">
+				<h2>get in touch</h2>
+				<p>
+					The gradual accumulation of information about atomic and small-scale
+					behaviour during the first quarter of the 20th
+				</p>
+			</div>
+			<form class="inTouch__subs-block">
+				<label for="subs-email">
+					<input
+						id="subs-email"
+						type="email"
+						placeholder="Your Email"
+						required
+					/>
+				</label>
+				<button type="submit">subscribe</button>
+			</form>
+		</div>
+	</section>
 </main>
 
 
 		<!-- //footer -->
-		
+		<footer class="footer">
+	<section class="footer__contacts-block">
+		<div class="container">
+			<ul class="main-list">
+				<li class="main-list__item">
+					<h3>get in touch</h3>
+					<p>
+						the quick fox jumps over the <br />
+						lazy dog
+					</p>
+					<div>
+						<a href="#">
+							<svg width="23" height="23">
+								<use href="./img/icons.svg#icon-facebook"></use>
+							</svg>
+						</a>
+						<a href="#">
+							<svg width="23" height="23">
+								<use href="./img/icons.svg#icon-instagram"></use>
+							</svg>
+						</a>
+						<a href="#">
+							<svg width="23" height="23">
+								<use href="./img/icons.svg#icon-twitter"></use>
+							</svg>
+						</a>
+					</div>
+				</li>
+
+				<li class="main-list__item">
+					<h3>company info</h3>
+					<ul class="minor-list">
+						<li><a href="#">about us</a></li>
+						<li><a href="#">carrier</a></li>
+						<li><a href="#">we are hiring</a></li>
+						<li><a href="#">blog</a></li>
+					</ul>
+				</li>
+
+				<li class="main-list__item">
+					<h3>fetures</h3>
+					<ul class="minor-list">
+						<li><a href="#">business marketing</a></li>
+						<li><a href="#">user analytic</a></li>
+						<li><a href="#">live chat</a></li>
+						<li><a href="#">unlimited support</a></li>
+					</ul>
+				</li>
+
+				<li class="main-list__item">
+					<h3>resouces</h3>
+					<ul class="minor-list">
+						<li><a href="#">IOS & Android</a></li>
+						<li><a href="#">watch a demo</a></li>
+						<li><a href="#">customers</a></li>
+						<li><a href="#">API</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="footer__author">
+		<div class="container">
+			<h6>Made With Love By Figmaland All Right Reserved</h6>
+		</div>
+	</section>
+</footer>
+
+		<script src="./js/splide.min.js"></script>
+		<script src="./js/reviews_slider.js"></script>
+		<script src="./js/burger.js"></script>
 	</body>
 </html>
