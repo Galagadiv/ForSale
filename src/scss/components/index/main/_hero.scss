@@ -1,8 +1,10 @@
 @use "./variables" as vars;
 
 .hero {
-	background: transparent;
-	margin-top: 13px;
+	padding-top: 92px;
+	margin-top: -92px;
+	background: url("../img/background.jpg") no-repeat center/cover;
+	transition: margin-top vars.$trans-anim;
 	.container {
 		display: flex;
 		padding: 50px 0;
@@ -170,4 +172,12 @@
 			letter-spacing: 0.02em;
 		}
 	}
+	@include vars.mobile {
+		margin-top: 72px;
+		transition: margin-top vars.$trans-anim;
+	}
 }
+// .change-margin {
+// 	margin-top: 0px;
+// 	transition: margin-top vars.$trans-anim;
+// }

@@ -59,4 +59,14 @@
 			}
 		}
 	}
+	@include vars.mobile {
+		&__text {
+			max-width: 200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__list {
+			flex-direction: column;
+		}
+	}
 }

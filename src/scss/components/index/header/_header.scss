@@ -1,24 +1,5 @@
 @use "./variables" as vars;
 
-.background {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: auto;
-	//непрацює нормально, бо хз
-	//background: url("../img/background.jpg") no-repeat center/cover;
-	background-size: cover;
-	z-index: -1;
-	background-color: vars.$muted-color;
-	transition: top vars.$trans-anim;
-	img {
-		margin-left: auto;
-		margin-right: auto;
-		width: auto;
-		height: auto;
-		max-height: 817px;
-	}
-}
 .desktop {
 	display: flex;
 	background: transparent;
@@ -63,27 +44,24 @@
 }
 .mobile {
 	display: none;
-	background: transparent;
-	padding: 20px 0;
 	background-color: vars.$light-gray-2;
 	.container {
 		display: flex;
-		align-items: baseline;
+		width: 100%;
+		padding: 20px 0;
+		justify-content: space-between;
 	}
 	&__title {
 		display: flex;
 		align-items: center;
 		color: vars.$text-color;
-		margin-right: 95px;
 	}
 	&__icons-list {
 		display: flex;
-		gap: 24px;
-		margin-right: 345px;
+		justify-content: space-between;
 		align-items: center;
 		&__item {
 			&__button {
-				// color: vars.$light-text-color;
 				background: none;
 				border: 0;
 				outline: 0;
@@ -99,7 +77,7 @@
 		a {
 			color: vars.$second-text-color;
 			font-size: 30px;
-			font-weight: 400;
+			font-weight: 600;
 			line-height: 1.5em;
 			letter-spacing: 0.02em;
 		}
@@ -122,83 +100,26 @@
 		}
 	}
 }
-// #burger-list {
-// 	background-color: vars.$light-gray-2;
-// 	position: absolute;
-// 	top: -50%;
-// 	left: 0;
-// 	width: 100%;
-// 	transition: top vars.$trans-anim;
-// 	z-index: -1; /* Високий шар для меню */
-// }
-// .fake {
-// 	position: relative;
-// 	top: -100%;
-// 	left: 0;
-// 	width: 100%;
-// 	transition: top vars.$trans-anim;
-// 	height: 440px;
-// 	z-index: 1;
-// }
-// #burger-list.is-visible,
-// #burger-list.is-visible + .fake {
-// 	top: 7%; /* Показати меню */
-// }
-
-// #burger-list.is-visible + .background {
-// 	top: 50%;
-// }
 
 #burger-list {
+	display: none; /* Робить елемент видимим */
 	background-color: vars.$light-gray-2;
-	position: absolute;
-	top: -57%; /* Початкове розташування за межами екрана */
-	left: 0;
 	width: 100%;
-	transition: top vars.$trans-anim;
-	z-index: 0; /* Високий шар для меню */
-}
-
-/* Стилі для .fake */
-.fake {
-	position: relative;
-	top: -100%; /* Початкове розташування .fake */
-	left: 0;
-	width: 100%;
-	padding-top: 0; /* Висота псевдоелементу */
-	transition: padding-top vars.$trans-anim;
-	z-index: -1; /* Задній план */
-}
-
-/* Стилі для .background */
-.background {
-	position: absolute;
-	top: 7%; /* Початкове розташування фону */
-	left: 0;
-	width: 100%;
-	transition: top vars.$trans-anim;
-	z-index: -1; /* Фон повинен бути позаду */
+	height: auto;
+	margin-top: -200%; /* Початкове приховане положення */
+	transition: margin-top vars.$trans-anim;
 }
 
 /* Коли меню стає видимим */
 #burger-list.is-visible {
-	top: 7%; /* Переміщаємо #burger-list вниз */
+	margin-top: 0; /* Елемент "опускається" у видиму область */
 }
-
-/* Коли меню видно, відсуваємо .fake і .background */
-#burger-list.is-visible + .fake {
-	padding-top: 440px; /* Рухаємо .fake вниз разом з меню */
-}
-
-#burger-list.is-visible + .fake + .background {
-	top: 54%; /* Переміщаємо фон вниз */
-}
-
 @include vars.mobile {
 	.desktop {
 		display: none;
 	}
-	.mobile {
+	.mobile,
+	#burger-list {
 		display: flex;
 	}
 }

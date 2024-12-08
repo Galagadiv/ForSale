@@ -8,6 +8,13 @@
 		align-items: center;
 		padding: 80px 0;
 	}
+	h3 {
+		display: none;
+		text-transform: capitalize;
+		color: vars.$light-text-color;
+		text-align: center;
+		margin-bottom: 30px;
+	}
 	&__text-block {
 		max-width: 438px;
 		h2,
@@ -50,6 +57,20 @@
 			font-weight: 500;
 			line-height: 2em;
 			letter-spacing: 0.02px;
+		}
+	}
+	@include vars.mobile {
+		.container {
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 90px 0;
+		}
+		h3 {
+			display: flex;
+		}
+		&__text-block {
+			display: none;
 		}
 	}
 }

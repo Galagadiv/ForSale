@@ -4,42 +4,63 @@
 	display: flex;
 	flex-direction: column;
 	background-color: vars.$light-gray-1;
+
 	.container {
 		padding: 112px 0;
+		@include vars.mobile {
+			padding: 45px 0;
+		}
 	}
+
 	&__title {
 		text-transform: capitalize;
 		text-align: center;
 		margin-bottom: 10px;
 	}
+
 	&__text {
 		text-align: center;
 		color: vars.$second-text-color;
 		margin-bottom: 80px;
 	}
+
 	&__list {
-		display: flex;
+		display: flex !important;
 		gap: 30px;
-		// @include vars.mobile {
-		// 	flex-direction: column;
-		// }
+
+		/* Адаптивний дизайн для мобільних */
+		@include vars.mobile {
+			flex-direction: column !important;
+		}
 	}
+
 	&__slide {
 		background-color: vars.$light-background-color;
 		max-width: 330px;
+		width: 100% !important;
 		border-radius: 10px;
 		border: 2px solid vars.$light-gray-2;
 		padding: 30px 35px;
+
 		&__stars-block {
 			display: flex;
-			// padding: 30px 35px 0px;
 			align-items: center;
 			gap: 13px;
 			margin-bottom: 22px;
 		}
+
 		&__text {
 			color: vars.$second-text-color;
 			margin-bottom: 20px;
+		}
+
+		/* Слайди на мобільних: перші три займають весь ряд */
+		@include vars.mobile {
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6) {
+				display: none !important; /* Кожен слайд займає дві колонки */
+			}
 		}
 	}
 }

@@ -1,7 +1,13 @@
 @use "./variables" as vars;
 
 .pricing {
-	margin: 112px 0;
+	background-color: vars.$light-gray-1;
+	.container {
+		padding: 112px 0;
+		@include vars.mobile {
+			padding: 45px 0 80px 0;
+		}
+	}
 	&__title {
 		text-transform: capitalize;
 		text-align: center;
@@ -125,6 +131,13 @@
 					transition: color vars.$trans-anim;
 				}
 			}
+			@include vars.mobile {
+				margin-top: 0;
+			}
+		}
+		@include vars.mobile {
+			flex-direction: column;
+			gap: 30px;
 		}
 	}
 }

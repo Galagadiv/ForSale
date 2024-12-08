@@ -1,8 +1,13 @@
 @use "./variables" as vars;
 
 .faq {
-	padding: 125px 0 80px 0;
 	background-color: vars.$light-gray-1;
+	.container {
+		padding: 125px 0 80px 0;
+		@include vars.mobile {
+			padding: 100px 0;
+		}
+	}
 	&__title {
 		text-transform: capitalize;
 		text-align: center;
@@ -38,7 +43,12 @@
 				color: vars.$second-text-color;
 			}
 			@include vars.mobile {
-				flex: 1 1 calc(50% - 30px); /* 1 колонка на мобільних */
+				flex: 1 1 calc(50% - 30px);
+				&:nth-child(7),
+				&:nth-child(8),
+				&:nth-child(9) {
+					display: none !important; /* Кожен слайд займає дві колонки */
+				} /* 1 колонка на мобільних */
 			}
 			@include vars.tablet {
 				flex: 1 1 calc(100%); /* 2 для планшетів  */
