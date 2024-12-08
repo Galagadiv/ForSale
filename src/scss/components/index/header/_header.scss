@@ -10,6 +10,7 @@
 	background-size: cover;
 	z-index: -1;
 	background-color: vars.$muted-color;
+	transition: top vars.$trans-anim;
 	img {
 		margin-left: auto;
 		margin-right: auto;
@@ -121,17 +122,76 @@
 		}
 	}
 }
+// #burger-list {
+// 	background-color: vars.$light-gray-2;
+// 	position: absolute;
+// 	top: -50%;
+// 	left: 0;
+// 	width: 100%;
+// 	transition: top vars.$trans-anim;
+// 	z-index: -1; /* Високий шар для меню */
+// }
+// .fake {
+// 	position: relative;
+// 	top: -100%;
+// 	left: 0;
+// 	width: 100%;
+// 	transition: top vars.$trans-anim;
+// 	height: 440px;
+// 	z-index: 1;
+// }
+// #burger-list.is-visible,
+// #burger-list.is-visible + .fake {
+// 	top: 7%; /* Показати меню */
+// }
+
+// #burger-list.is-visible + .background {
+// 	top: 50%;
+// }
+
 #burger-list {
 	background-color: vars.$light-gray-2;
-	transform: scaleY(0);
-	transform-origin: top;
+	position: absolute;
+	top: -57%; /* Початкове розташування за межами екрана */
+	left: 0;
 	width: 100%;
-	transition: transform vars.$trans-anim;
-	z-index: -1; /* Високий шар для меню */
+	transition: top vars.$trans-anim;
+	z-index: 0; /* Високий шар для меню */
 }
 
+/* Стилі для .fake */
+.fake {
+	position: relative;
+	top: -100%; /* Початкове розташування .fake */
+	left: 0;
+	width: 100%;
+	padding-top: 0; /* Висота псевдоелементу */
+	transition: padding-top vars.$trans-anim;
+	z-index: -1; /* Задній план */
+}
+
+/* Стилі для .background */
+.background {
+	position: absolute;
+	top: 7%; /* Початкове розташування фону */
+	left: 0;
+	width: 100%;
+	transition: top vars.$trans-anim;
+	z-index: -1; /* Фон повинен бути позаду */
+}
+
+/* Коли меню стає видимим */
 #burger-list.is-visible {
-	transform: scaleY(1); /* Показати меню */
+	top: 7%; /* Переміщаємо #burger-list вниз */
+}
+
+/* Коли меню видно, відсуваємо .fake і .background */
+#burger-list.is-visible + .fake {
+	padding-top: 440px; /* Рухаємо .fake вниз разом з меню */
+}
+
+#burger-list.is-visible + .fake + .background {
+	top: 54%; /* Переміщаємо фон вниз */
 }
 
 @include vars.mobile {
