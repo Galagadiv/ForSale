@@ -5,6 +5,7 @@
 	margin-top: -92px;
 	background: url("../img/background.jpg") no-repeat center/cover;
 	transition: margin-top vars.$trans-anim;
+
 	.container {
 		display: flex;
 		padding: 50px 0;
@@ -12,6 +13,7 @@
 		@include vars.mobile {
 			flex-direction: column;
 			gap: 80px;
+			transform: scaleX(-1);
 		}
 	}
 	&__text-block {
@@ -175,6 +177,8 @@
 	@include vars.mobile {
 		margin-top: 72px;
 		transition: margin-top vars.$trans-anim;
+		transform: scaleX(-1);
+		background-position-x: 30%;
 	}
 }
 // .change-margin {

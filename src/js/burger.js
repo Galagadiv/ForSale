@@ -5,8 +5,6 @@
 	const mobile = document.querySelector(".mobile");
 
 	burgerBtn.addEventListener("click", () => {
-		// Додаємо або забираємо клас для анімації
-		// hero.classList.toggle("change-margin");
 		burgerList.classList.toggle("is-visible");
 
 		if (burgerList.classList.contains("is-visible")) {

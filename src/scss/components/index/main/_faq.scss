@@ -50,9 +50,9 @@
 					display: none !important; /* Кожен слайд займає дві колонки */
 				} /* 1 колонка на мобільних */
 			}
-			@include vars.tablet {
-				flex: 1 1 calc(100%); /* 2 для планшетів  */
-			}
+			// @include vars.tablet {
+			// 	flex: 1 1 calc(100%); /* 2 для планшетів  */
+			// }
 		}
 	}
 }

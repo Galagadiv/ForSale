@@ -21,15 +21,15 @@ $trans-anim: 0.5s ease !default;
 $trans-anim-slow: 1s ease !default;
 
 @mixin mobile {
-	@media screen and (min-width: 400px) and (max-width: 727.9px) {
+	@media screen and (min-width: 400px) and (max-width: 1439.9px) {
 		@content;
 	}
 }
-@mixin tablet {
-	@media screen and (min-width: 728px) and (max-width: 1439.9px) {
-		@content;
-	}
-}
+// @mixin tablet {
+// 	@media screen and (min-width: 728px) and (max-width: 1439.9px) {
+// 		@content;
+// 	}
+// }
 @mixin desktop {
 	@media screen and (min-width: 1440px) {
 		@content;
