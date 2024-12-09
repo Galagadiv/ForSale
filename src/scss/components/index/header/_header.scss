@@ -1,0 +1,125 @@
+@use "./variables" as vars;
+
+.desktop {
+	display: flex;
+	background: transparent;
+	padding: 20px 0;
+	.container {
+		display: flex;
+	}
+	&__title {
+		display: flex;
+		align-items: center;
+		color: vars.$light-text-color;
+		margin-right: 110px;
+	}
+	&__list {
+		display: flex;
+		gap: 21px;
+		margin-right: 345px;
+		align-items: center;
+		&__item {
+			&__link {
+				color: vars.$light-text-color;
+			}
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		max-width: 190px;
+		max-height: 52px;
+		border: 0;
+		border-radius: 5px;
+		padding: 15px 25px;
+		text-align: center;
+		background-color: vars.$primary-color;
+		color: vars.$light-text-color;
+		text-transform: capitalize;
+		gap: 15px;
+		svg {
+			color: vars.$light-text-color;
+		}
+	}
+}
+.mobile {
+	display: none;
+	background-color: vars.$light-gray-2;
+	.container {
+		display: flex;
+		width: 100%;
+		padding: 20px 0;
+		justify-content: space-between;
+	}
+	&__title {
+		display: flex;
+		align-items: center;
+		color: vars.$text-color;
+	}
+	&__icons-list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&__item {
+			&__button {
+				background: none;
+				border: 0;
+				outline: 0;
+			}
+		}
+	}
+	&__nav-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 85px 0;
+		gap: 30px;
+		a {
+			color: vars.$second-text-color;
+			font-size: 30px;
+			font-weight: 600;
+			line-height: 1.5em;
+			letter-spacing: 0.02em;
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		max-width: 190px;
+		max-height: 52px;
+		border: 0;
+		border-radius: 5px;
+		padding: 15px 25px;
+		text-align: center;
+		background-color: vars.$primary-color;
+		color: vars.$light-text-color;
+		text-transform: capitalize;
+		gap: 15px;
+		svg {
+			color: vars.$light-text-color;
+		}
+	}
+}
+
+#burger-list {
+	display: none; /* Робить елемент видимим */
+	background-color: vars.$light-gray-2;
+	width: 100%;
+	height: auto;
+	margin-top: -200%; /* Початкове приховане положення */
+	transition: margin-top vars.$trans-anim;
+}
+
+/* Коли меню стає видимим */
+#burger-list.is-visible {
+	margin-top: 0; /* Елемент "опускається" у видиму область */
+}
+@include vars.mobile {
+	.desktop {
+		display: none;
+	}
+	.mobile,
+	#burger-list {
+		display: flex;
+	}
+}

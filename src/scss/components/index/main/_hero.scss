@@ -1,0 +1,187 @@
+@use "./variables" as vars;
+
+.hero {
+	padding-top: 92px;
+	margin-top: -92px;
+	background: url("../img/background.jpg") no-repeat center/cover;
+	transition: margin-top vars.$trans-anim;
+
+	.container {
+		display: flex;
+		padding: 50px 0;
+		justify-content: space-between;
+		@include vars.mobile {
+			flex-direction: column;
+			gap: 80px;
+			transform: scaleX(-1);
+		}
+	}
+	&__text-block {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 600px;
+		gap: 35px;
+		&__title,
+		&__txt {
+			color: vars.$light-text-color;
+		}
+		&__txt {
+			max-width: 376px;
+			//Макет не відповідає реальності
+			// diff
+			font-weight: 300;
+		}
+		&__btn-block {
+			display: flex;
+			gap: 10px;
+			&__l,
+			&__r {
+				text-transform: capitalize;
+				outline: 0;
+				border-radius: 37px;
+				padding: 15px 36px;
+				color: vars.$light-text-color;
+				font-weight: 500;
+				letter-spacing: 0.02em;
+			}
+			&__l {
+				background-color: vars.$primary-color;
+				border: 0;
+			}
+			&__r {
+				background: transparent;
+				border: 1px solid vars.$light-text-color;
+			}
+		}
+		@include vars.mobile {
+			&__title {
+				text-align: center;
+				font-size: 40px;
+				line-height: 1.425em;
+				letter-spacing: 0.02em;
+				font-weight: 700;
+			}
+			&__txt {
+				text-align: center;
+			}
+			&__btn-block {
+				flex-direction: column;
+				align-items: center;
+				&__l,
+				&__r {
+					padding: 10px 36px;
+				}
+			}
+		}
+	}
+	&__form-block {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: vars.$light-background-color;
+		border: 0;
+		border-radius: 10px;
+		padding: 40px;
+		max-width: 328px;
+		&__title {
+			text-transform: capitalize;
+			margin-bottom: 40px;
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			margin-bottom: 40px;
+			li {
+				display: flex;
+				flex-direction: column;
+				label {
+					font-family: vars.$montserrat-font;
+					font-size: 14px;
+					font-weight: 600;
+					line-height: 1.71em;
+					letter-spacing: 0.02em;
+					margin-bottom: 10px;
+				}
+				input {
+					border: 1px solid vars.$light-gray-2;
+					border-radius: 5px;
+					background-color: vars.$light-gray-1;
+					padding: 11px 21px;
+					max-height: 50px;
+					color: vars.$second-text-color;
+					transition: border vars.$trans-anim;
+					font-family: vars.$montserrat-font;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 2em;
+					letter-spacing: 0.02em;
+				}
+				input:hover,
+				input:focus,
+				select:hover,
+				select:focus {
+					border-color: vars.$primary-color;
+					transition: border vars.$trans-anim;
+				}
+				select {
+					font-family: vars.$montserrat-font;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 2em;
+					letter-spacing: 0.02em;
+
+					max-height: 50px;
+					appearance: none; /* Приховує стандартну стрілку */
+					border: 1px solid vars.$light-gray-2;
+					outline: 0;
+					border-radius: 5px;
+					background: vars.$light-gray-1
+						url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 32"><path fill="%23737373" d="M7.969-0.002l20 20 20-20 8 4-28 28-28-28 8-4z"/></svg>')
+						no-repeat;
+					background-position: calc(100% - 30px) center;
+					background-size: 14px 20px;
+					padding: 11px 55px 11px 21px;
+					color: vars.$second-text-color;
+					transition: border vars.$trans-anim;
+					option {
+						font-family: vars.$montserrat-font;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 2em;
+						letter-spacing: 0.02em;
+
+						background-color: vars.$muted-color;
+						color: vars.$text-color;
+						max-width: 214px;
+					}
+				}
+			}
+		}
+		button {
+			border-radius: 5px;
+			border: 0;
+			padding: 15px 50px;
+			color: vars.$light-text-color;
+			background-color: vars.$primary-color;
+			text-transform: capitalize;
+
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1.57em;
+			letter-spacing: 0.02em;
+		}
+	}
+	@include vars.mobile {
+		margin-top: 72px;
+		transition: margin-top vars.$trans-anim;
+		transform: scaleX(-1);
+		background-position-x: 30%;
+	}
+}
+// .change-margin {
+// 	margin-top: 0px;
+// 	transition: margin-top vars.$trans-anim;
+// }

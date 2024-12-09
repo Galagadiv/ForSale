@@ -1,0 +1,76 @@
+@use "./variables" as vars;
+
+.inTouch {
+	background-color: vars.$text-color;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 80px 0;
+	}
+	h3 {
+		display: none;
+		text-transform: capitalize;
+		color: vars.$light-text-color;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	&__text-block {
+		max-width: 438px;
+		h2,
+		p {
+			color: vars.$light-text-color;
+		}
+		h2 {
+			text-transform: capitalize;
+		}
+	}
+	&__subs-block {
+		display: flex;
+		position: relative;
+		align-items: center;
+		input {
+			max-width: 386px;
+			width: 100%;
+			padding: 15px 125px 15px 20px;
+			border-radius: 5px;
+
+			color: vars.$second-text-color;
+			font-size: 14px;
+			font-weight: 400;
+			font-family: vars.$montserrat-font;
+			line-height: 2em;
+			letter-spacing: 0.02em;
+		}
+		button {
+			position: absolute;
+			right: 0;
+			padding: 14px 22px;
+			margin-right: 1px;
+			border: 0;
+			border-radius: 5px;
+
+			color: vars.$light-text-color;
+			background-color: vars.$primary-color;
+			text-transform: capitalize;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 2em;
+			letter-spacing: 0.02px;
+		}
+	}
+	@include vars.mobile {
+		.container {
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 90px 0;
+		}
+		h3 {
+			display: flex;
+		}
+		&__text-block {
+			display: none;
+		}
+	}
+}
